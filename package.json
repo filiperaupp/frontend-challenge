@@ -1,0 +1,40 @@
+{
+  "name": "plug-test-front-end",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Leonardo Pinheiro <leonardo@plugpagamentos.com>"
+  },
+  "scripts": {
+    "build": "yarn typecheck && vite build",
+    "dev": "vite",
+    "serve": "yarn build && vite preview --port 3000",
+    "test": "jest",
+    "test:unit": "jest --watch",
+    "test:unit:coverage": "jest --silent --watchAll=false --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.1",
+    "@types/jest": "^28.1.3",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/testing-library__user-event": "^4.2.0",
+    "@vitejs/plugin-legacy": "^1.8.2",
+    "@vitejs/plugin-react": "^1.3.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "miragejs": "^0.1.45",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.12"
+  }
+}
