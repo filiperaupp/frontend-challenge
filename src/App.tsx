@@ -1,9 +1,14 @@
 import styles from "./App.module.css";
+import { Header } from "./components/Header";
+import { Router } from "./Router";
 
 export function App() {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.text}>Hello World</h1>
-    </main>
+    <div>
+      <Header />
+      <main>
+        <Router />
+      </main>
+    </div>
   );
 }
