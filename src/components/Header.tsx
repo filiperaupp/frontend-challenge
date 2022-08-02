@@ -1,5 +1,10 @@
+import styles from "../styles/Header.module.css";
+import logoImg from "../assets/images/logo.png"
+
 export function Header() {
     return (
-        <h1>Header</h1>
+        <header className={styles.header}>
+            <img className={styles.logo} src={logoImg} alt="" />
+        </header>
     )
 }

@@ -4,11 +4,9 @@ import { Router } from "./Router";
 
 export function App() {
   return (
-    <div>
+    <div className={styles.app}>
       <Header />
-      <main>
-        <Router />
-      </main>
+      <Router />
     </div>
   );
 }
