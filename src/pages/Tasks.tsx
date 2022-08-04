@@ -1,15 +1,37 @@
 import styles from "../styles/Tasks.module.css";
 import { Plus } from "phosphor-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { InputText } from "../components/InputText";
 import { InputSwitch } from "../components/InputSwitch";
+import { TaskService } from "../services/task.service";
+import { Task } from "src/db/db.types";
+import { TaskList } from "../components/TaskList";
 
 export function Tasks() {
+  const taskService = new TaskService();
+  const [loading, setLoading] = useState(false);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [form, setForm] = useState({
     title: "",
     description: "",
     done: false,
   });
+
+  useEffect(() => {
+    setLoading(true);
+    taskService
+      .getAll()
+      .then(({ data }) => setTasks(data.tasks))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const [onGoingTasks, doneTasks] = useMemo(() => {
+    console.log(tasks);
+    return [
+      tasks.filter((task) => !task.done) || [],
+      tasks.filter((task) => task.done) || [],
+    ];
+  }, [tasks]);
 
   const handleInputTitle = (event: any) => {
     const value = event.target.value;
@@ -51,24 +73,14 @@ export function Tasks() {
     }
   }
 
+  if (loading) return <div style={{ width: "100%", textAlign: "center" }}>Carregando...</div>
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.list}>
-          <h1 className={styles.title}>To Do</h1>
-          <div className={styles.card}>
-            <h4>Teste para a Plug</h4>
-            <small>Desenvolver o teste para a Plug Pagamentos</small>
-          </div>
-        </div>
+        <TaskList listTitle="To Do" tasks={onGoingTasks} />
         <div className={styles.divider}></div>
-        <div className={styles.list}>
-          <h1 className={styles.title}>Done</h1>
-          <div className={styles.card}>
-            <h4>Teste para a Plug</h4>
-            <small>Desenvolver o teste para a Plug Pagamentos</small>
-          </div>
-        </div>
+        <TaskList listTitle="Done" tasks={doneTasks} />
       </div>
       <button onClick={openNav} className={styles.button}>
         <Plus size={20} weight="bold" />
@@ -96,6 +108,8 @@ export function Tasks() {
             onChange={handleInputDone}
           ></InputSwitch>
         </div>
+        {onGoingTasks.map((task) => JSON.stringify(task))}
+        {doneTasks.map((task) => JSON.stringify(task))}
       </div>
       <div
         ref={offcanvasBackdropRef}
