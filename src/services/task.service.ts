@@ -5,4 +5,8 @@ export class TaskService {
     getAll() {
         return axios.get<{tasks: Task[]}>("/api/tasks")
     }
+
+    create(task: any) {
+        return axios.post("/api/tasks", task)
+    }
 }
