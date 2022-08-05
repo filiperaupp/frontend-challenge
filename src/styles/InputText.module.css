@@ -4,6 +4,7 @@
 }
 
 .text-field > input {
+    box-sizing: border-box;
     width: 100%;
     display: inline-block;
     border: 1px solid #AEBFD0;
@@ -23,11 +24,9 @@
 }
 
 .text-field > input:focus ~ label, .text-field input:valid ~ label {
-    font-weight: normal;
     top: -10px;
     left: 15px;
     font-size: small;
-    /* color: #32cd32; */
     background-color:#fff;
     padding:0 5px 0 5px;
 }
