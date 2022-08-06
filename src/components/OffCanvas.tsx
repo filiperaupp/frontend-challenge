@@ -7,6 +7,7 @@ import { InputText } from "./InputText";
 interface OffCanvasProps {
   show: boolean;
   onClose: () => void;
+  addTask: (task: any) => void;
 }
 
 export function OffCanvas(props: OffCanvasProps) {
@@ -50,8 +51,10 @@ export function OffCanvas(props: OffCanvasProps) {
   const onSubmit = (e: any) => {
     e.preventDefault();
     if (title) {
-        taskService.create({ title, description, done })
-      console.log("submit");
+      taskService
+        .create({ title, description, done })
+        .then(({ data }) => props.addTask(data.task))
+        .finally(() => closeNav());
     }
   };
 
