@@ -48,12 +48,21 @@ export function OffCanvas(props: OffCanvasProps) {
     props.onClose();
   }
 
+  const resetForm = () => {
+    setTitle("");
+    setDescription("");
+    setDone(false);
+  };
+
   const onSubmit = (e: any) => {
     e.preventDefault();
     if (title) {
       taskService
         .create({ title, description, done })
-        .then(({ data }) => props.addTask(data.task))
+        .then(({ data }) => {
+          props.addTask(data.task);
+          resetForm();
+        })
         .finally(() => closeNav());
     }
   };
@@ -73,6 +82,7 @@ export function OffCanvas(props: OffCanvasProps) {
               label="Título"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
+              required
             ></InputText>
             <InputText
               label="Descrição"
@@ -87,7 +97,7 @@ export function OffCanvas(props: OffCanvasProps) {
           </form>
         </div>
         <div className={styles.bottom}>
-          <button className={styles.submit} form="taskForm" type="submit">
+          <button className={styles.submit} form="taskForm" type="submit" disabled={!title}>
             Criar Tarefa
           </button>
         </div>

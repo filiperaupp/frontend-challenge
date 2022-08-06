@@ -19,7 +19,7 @@
 .sidenav .top {
   height: 75px;
   width: 100%;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #dde5ed;
 
   display: flex;
 }
@@ -30,14 +30,19 @@
   margin-left: 1rem;
 }
 
+.sidenav .top > a {
+  color: #f04e98;
+}
+
 .sidenav .top > a:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .sidenav .top > h1 {
   flex-grow: 1;
   align-self: center;
   text-align: center;
+  color: #141b4d;
   /* padding-left: 1rem; */
   margin-right: 1rem;
 }
@@ -53,21 +58,31 @@
   padding: 1.5rem 2rem;
   height: 100px;
   width: 100%;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid #dde5ed;
 }
 
-.sidenav .bottom .submit {
-letter-spacing: 1.25px;
+.submit {
+  letter-spacing: 1.25px;
   border-radius: 6px;
   width: 100%;
   height: 3rem;
   background-color: #f04e98;
   color: #ffffff;
   text-transform: uppercase;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.sidenav .bottom .submit:hover {
-    cursor: pointer;
+.submit:disabled {
+  background-color: #eef2f6;
+  color: #aebfd0;
+}
+
+.submit:hover:not(:disabled) {
+  background-color: #d54280;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

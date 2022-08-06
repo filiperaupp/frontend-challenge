@@ -42,16 +42,21 @@ margin-top: 10.5rem;
   justify-content: center;
   align-items: center;
   gap: 0.7rem;
+  transition: background-color .3s;
 }
 
 .button:hover {
   cursor: pointer;
+  background-color: #D54280;
+  transition: background-color .3s;
 }
 
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 3.5rem;
   }
 
   .divider {

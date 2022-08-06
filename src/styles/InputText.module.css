@@ -1,6 +1,6 @@
 .text-field {
     position: relative;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .text-field > input {
@@ -29,4 +29,16 @@
     font-size: small;
     background-color:#fff;
     padding:0 5px 0 5px;
+}
+
+.error {
+    color: #E40022;
+}
+
+.error > input {
+    border-color: #E40022;
+}
+
+.error > label {
+    color: #E40022;
 }
