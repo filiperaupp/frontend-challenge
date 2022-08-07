@@ -1,6 +1,6 @@
 import styles from "../styles/Tasks.module.css";
 import { Plus } from "phosphor-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { TaskService } from "../services/task.service";
 import { Task } from "../db/db.types";
 import { TaskList } from "../components/TaskList";
@@ -11,15 +11,10 @@ export function Tasks() {
   const taskService = new TaskService();
   const [show, setShow] = useState(false);
   const [toast, setToast] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {
-    setLoading(true);
-    taskService
-      .getAll()
-      .then(({ data }) => setTasks(data.tasks))
-      .finally(() => setLoading(false));
+    taskService.getAll().then(({ data }) => setTasks(data.tasks));
   }, []);
 
   const [onGoingTasks, doneTasks] = useMemo(() => {
@@ -49,11 +44,6 @@ export function Tasks() {
   function hideToast() {
     setToast(false);
   }
-
-  if (loading)
-    return (
-      <div style={{ width: "100%", textAlign: "center" }}>Carregando...</div>
-    );
 
   return (
     <section className={styles.section}>
