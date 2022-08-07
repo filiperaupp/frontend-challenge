@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { LinkButton } from "../components/LinkButton";
 import homeIllustrationImg from "../assets/home.png"
 import styles from "../styles/Home.module.css";
