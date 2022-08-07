@@ -5,7 +5,8 @@
 .title {
   color: #344383;
   text-transform: uppercase;
-  font-weight: normal;
+  font-style: normal;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 4rem;
   margin-top: 7rem;
