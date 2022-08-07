@@ -30,9 +30,14 @@ export function InputText(props: InputTextProps) {
         onChange={props.onChange}
         onBlur={isValid}
         onFocus={() => setHasError(false)}
+        data-testid="input-text"
       />
       <label>{props.label}</label>
-      {hasError && <small>{props.label} é obrigatório</small>}
+      {hasError && (
+        <small data-testid="input-text-error">
+          {props.label} é obrigatório
+        </small>
+      )}
     </div>
   );
 }
