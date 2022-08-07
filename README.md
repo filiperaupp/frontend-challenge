@@ -1,13 +1,54 @@
 # Plug Pagamentos | Desafio Front-end
 
-Este repositório contempla todas as informações referentes ao processo de contratação de front-end da Plug. 🚀
+Este repositório contém o código de desenvolvimento do desafio front-end da Plug Investimentos.
 
-## Sumário
+## Tecnologias
+### Recursos do template do desafio
+- [ReactJS](https://reactjs.org)
+- [Vite](https://vitejs.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Jest](https://jestjs.io)
+- [Testing Library](https://testing-library.com)
+- [MirageJS](https://miragejs.com/)
+- [Polyfills](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy#readme)
 
-- [Como rodar o projeto](https://github.com/plughacker/plug-test-front-end/blob/main/APP.md)
-- [Informações sobre o desafio](https://github.com/plughacker/plug-test-front-end/blob/main/CHALLENGE.md)
+### Outras tecnologias adicionadas
+- [React Router Dom](https://reactrouter.com/)
+- [Axios](https://axios-http.com/ptbr/)
+- [Phospor React](https://phosphoricons.com/)
 
-## Dúvidas
+## Rodando o projeto
 
-Qualquer dúvida sobre o processo seletivo pode ser enviada para o e-mail em que o teste foi encaminhado. Você também pode conferir nas issues do repositório se alguém já tirou sua dúvida
-ou sinta-se a vontade para abrir a sua! 😁
+1. Instalar as dependências
+
+```bash
+  yarn
+```
+
+2. Dev server com hot reload na http://localhost:3000.
+
+```bash
+yarn dev
+```
+
+## Comandos de testes
+
+- Roda todos os testes
+  ```bash
+  yarn test
+  ```
+- Roda unit tests com watch
+  ```bash
+  yarn test:unit
+  ```
+- Roda unit tests com coverage
+  ```bash
+  yarn test:unit:coverage
+  ```
+
+## Comando de build
+
+```bash
+yarn build
+```
+

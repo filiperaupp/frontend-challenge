@@ -1,14 +1,7 @@
-.main {
+.app {
+  min-height: 100%;
+  background-color: #eef2f6;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #141C4D;
-  height: 100%;
-}
-
-.text {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #F04E98;
-  text-transform: uppercase;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
 }
