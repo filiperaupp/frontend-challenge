@@ -10,10 +10,6 @@
   font-weight: bold;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 .switch {
   display: inline-block;
   position: relative;

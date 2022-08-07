@@ -1,4 +1,4 @@
-import "../styles/InputSwitch.css";
+import styles from  "../styles/InputSwitch.module.css";
 
 interface InputSwitchProps {
   label: string;
@@ -8,11 +8,11 @@ interface InputSwitchProps {
 
 export function InputSwitch(props: InputSwitchProps) {
   return (
-    <div className="fullInput">
-      <span className="inputTitle">{props.label}</span>
-      <div className="switch">
-        <input checked={props.value} onChange={props.onChange}  type="checkbox" id="switch1" className="switch__input" />
-        <label htmlFor="switch1" className="switch__label"></label>
+    <div className={styles.fullInput}>
+      <span className={styles.inputTitle}>{props.label}</span>
+      <div className={styles.switch}>
+        <input checked={props.value} onChange={props.onChange}  type="checkbox" id="switch1" className={styles.switch__input} />
+        <label htmlFor="switch1" className={styles.switch__label}></label>
       </div>
     </div>
   );
