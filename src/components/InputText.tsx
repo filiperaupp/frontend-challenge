@@ -16,8 +16,7 @@ export function InputText(props: InputTextProps) {
   }, [hasError]);
 
   const isValid = () => {
-    console.log("teste");
-    if (!props.required) return false;
+    if (!props.required) return;
     if (props.required && !props.value) setHasError(true);
     else setHasError(false);
   };
@@ -27,7 +26,7 @@ export function InputText(props: InputTextProps) {
       <input
         value={props.value}
         type="text"
-        required
+        required={props.required}
         onChange={props.onChange}
         onBlur={isValid}
         onFocus={() => setHasError(false)}
